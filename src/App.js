@@ -34,6 +34,7 @@ class App extends Component {
             <p>{team.city}</p>
               <h1>{team.full_name}</h1>
               <p>{team.name}</p>
+              <p>{team.city}</p>
             </div>
           )
         })}
