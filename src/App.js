@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       teams: [],
       monsters: [],
+      searchField: ''
     };
   }
 
@@ -23,24 +24,21 @@ class App extends Component {
       console.log(err)
     }
     };
-  
-  
-  render() {
-    return (
-      <div className='App'>
-        {this.state.teams.map((team) => {
-          return(
-            <div key={team.id}>
-            <p>{team.city}</p>
-              <h1>{team.full_name}</h1>
-              <p>{team.name}</p>
-              <p>{team.city}</p>
-            </div>
-          )
-        })}
-      </div>
-    );
-  }
+
+    render() {
+      return(
+        <div className= 'App'>
+        {this.state.teams.map((team) =>{
+        return (
+          <h2>{team.full_name}</h2>
+        )
+      })}
+        </div>
+      )
+      
+      
+    }
+
 }
 
 export default App;
