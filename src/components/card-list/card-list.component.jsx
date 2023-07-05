@@ -6,7 +6,7 @@ class CardList extends Component {
         const { teams } = this.props;
 
         return (
-            <div>
+            <div className= 'card-List'>
             {teams.map((team) => 
                   <div key={team.id}>
                   <p >{team.abbreviation}</p>
