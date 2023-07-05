@@ -6,16 +6,18 @@ class CardList extends Component {
         const { teams } = this.props;
 
         return (
-            <div className= 'card-List'>
-            {teams.map((team) => 
-                  <div key={team.id}>
-                  <p >{team.abbreviation}</p>
-                  <h2>{team.full_name}</h2>
-                  <p>{team.city}</p>
+            <div className= 'card-List'> 
+            {teams.map((team) => {
+             const { id, abbreviation, city, full_name } = team;
+             return(
+                <div className = 'card-container' key={id}>
+                  <p>{abbreviation}</p>
+                  <img alt= {`nba team ${team.full_name}`} src={`https://robohash.org/${full_name}?set=set2&size=180x180`} />
+                  <h2>{full_name}</h2>
+                  <p>{city}</p>
                   </div>
-                  
-                
-              )}
+             )   
+            })}
             </div>
             
         )
