@@ -1,7 +1,9 @@
 import { Component } from 'react';
 
-import logo from './logo.svg';
+import './components/card-list/card-list.component.jsx'
 import './App.css';
+import CardList from './components/card-list/card-list.component.jsx';
+import SearchBox from './components/search-box/search-box.component.jsx';
 
 class App extends Component {
   constructor() {
@@ -26,8 +28,6 @@ class App extends Component {
 
     getInput = (e) => {
       const searchString = e.target.value.toLocaleLowerCase(); 
-     //receives a callback and passes it to each element, if the element is true according to the callback it will keep the element. if false
-     //it will not be included.
       this.setState(() =>{
         return { searchString };
       });
@@ -40,20 +40,11 @@ class App extends Component {
 
       return(
         <div className= 'App'>
-        <input type='search'
-         placeholder='enter team' 
-         onChange={this.getInput} />
-
-        {nameFilter.map((team) =>{
-        return (
-          <div key={team.id}>
-          <p >{team.abbreviation}</p>
-          <h2>{team.full_name}</h2>
-          <p>{team.city}</p>
-          </div>
-          
-        )
-      })}
+        <SearchBox 
+          className = 'search-box' 
+          placeholder = 'search teams' 
+          onChangeHandler = {this.getInput}/>
+          <CardList teams = {nameFilter}/>
         </div>
       )
       
