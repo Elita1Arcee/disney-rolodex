@@ -12,7 +12,7 @@ class CardList extends Component {
              return(
                 <div className = 'card-container' key={id}>
                   <p>{abbreviation}</p>
-                  <img alt= {`nba team ${team.full_name}`} src={`https://robohash.org/${full_name}?set=set2&size=180x180`} />
+                  <img alt= {`nba team ${full_name}`} src={`https://robohash.org/${full_name}?set=set2&size=180x180`} />
                   <h2>{full_name}</h2>
                   <p>{city}</p>
                   </div>
